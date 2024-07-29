@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useContext } from 'react';
 import PostCard from '../PostCard'
 import axios from 'axios';
+import PostsContext from '../../Providers/PostsProvider';
 
 function PostCardList() {
-    const [posts, setPosts] = useState([]);
+    // const [posts, setPosts] = useState([]);
+    const {posts, setPosts} = useContext(PostsContext);
     useEffect(() => {
         // we will download the content from dummyapi.io
         console.log(import.meta.env.VITE_APP_ID)
@@ -16,7 +18,7 @@ function PostCardList() {
             const resObject = res.data;
             setPosts([...resObject.data])
         })
-    }, [])
+    }, [posts])
     return ( (posts.length == 0) ? 
                 "Loading..." : 
                 posts.map((post) => <PostCard 
