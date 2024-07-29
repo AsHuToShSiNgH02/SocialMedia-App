@@ -2,9 +2,6 @@ import { useEffect, useState } from 'react';
 import PostCard from '../PostCard'
 import axios from 'axios';
 
-let array = [
-    
-]
 function PostCardList() {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
