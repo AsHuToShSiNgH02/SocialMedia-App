@@ -31,7 +31,7 @@ function Input() {
         )
         .then(response => {
             console.log(response.data);
-            setPosts([...posts, response.data])
+            setPosts([response.data, ...posts])
             setLoading(false);
             setImageUrl("");
             setPostText("");

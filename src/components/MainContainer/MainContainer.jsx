@@ -19,7 +19,7 @@ export default function MainContainer() {
             direction="column" 
             md={8}>
             {/* Posts */}
-            <PostCardList/>
+            <PostCardList />
         </Grid>
       </Grid>
     </Box>
