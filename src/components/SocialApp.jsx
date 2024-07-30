@@ -1,5 +1,4 @@
 import MainContainer from './MainContainer/MainContainer'
-import Navbar from './Navbar/Navbar';
 import Input from './Input/Input';
 import PostsContext from '../Providers/PostsProvider';
 import { useState, useEffect } from 'react';
@@ -22,7 +21,6 @@ function SocialApp() {
     return (
         <div>
             <PostsContext.Provider value={ {posts, setPosts} }>
-                <Navbar/>
                 <Input/>
                 <MainContainer />
             </PostsContext.Provider>

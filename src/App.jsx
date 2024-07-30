@@ -1,10 +1,13 @@
 import './App.css';
-import SocialApp from './components/SocialApp';
+import CustomRoutes from './routes/CustomRoutes';
+import Navbar from './components/Navbar/Navbar'
+
 function App() {
 
   return (
     <>
-        <SocialApp/>
+        <Navbar/>
+        <CustomRoutes/> 
     </>
   )
 }
