@@ -1,7 +1,4 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import * as React from 'react';
+import useUserProfile from '../../hooks/useUserProfile';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -9,21 +6,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 export default function UserDetails() {
-  let { userid } = useParams();
-  const [loading, setLoading] = useState(true)
-  const [user, setUser] = useState({});
-  useEffect(() => {
-    axios.get(`https://dummyapi.io/data/v1/user/${userid}`, {
-        headers: {
-            'app-id': import.meta.env.VITE_APP_ID
-        }
-    })
-    .then((response) => {
-        setUser({...response.data})
-        console.log(response);
-        setLoading(false);
-    })
-  },[]);
+  const [user, loading] = useUserProfile();
+
   if(loading) {
     return <div>loading...</div>
   }else{
